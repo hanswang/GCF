@@ -10,8 +10,6 @@ void primeFactors(int n, int* f) {
     while (n%2 == 0) {
         f[k++] = 2;
         n /= 2;
-        printf ("%d ", f[k-1]);
-        printf (" - at %d\n", k-1);
     }
 
     for (int i = 3; i <= sqrt(n); i = i+2) {
@@ -23,7 +21,6 @@ void primeFactors(int n, int* f) {
 
     if (n > 2)
         f[k++] = n;
-    printf(" loop end \n");
 }
 
 int main ( int argc, char *argv[] ) {
@@ -46,16 +43,16 @@ int main ( int argc, char *argv[] ) {
     int s_factors[1000] = { 0 }, l_factors[1000] = { 0 };
 
     primeFactors(s, s_factors);
-    for (int i = 0; s_factors[i] > 0; i++) {
-        printf ("%d ", s_factors[i]);
-    }
-    printf(" sf end \n");
+//    for (int i = 0; s_factors[i] > 0; i++) {
+//        printf ("%d ", s_factors[i]);
+//    }
+//    printf(" sf end \n");
 
     primeFactors(l, l_factors);
-    for (int i = 0; l_factors[i] > 0; i++) {
-        printf ("%d ", l_factors[i]);
-    }
-    printf(" lf end \n");
+//    for (int i = 0; l_factors[i] > 0; i++) {
+//        printf ("%d ", l_factors[i]);
+//    }
+//    printf(" lf end \n");
 
     int gcf = 1, j = 0;
     for (int i = 0; s_factors[i] > 0; i++) {
